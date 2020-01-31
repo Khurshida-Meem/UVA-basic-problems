@@ -1,39 +1,53 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string Marge(string x)
+string demo(string a)
 {
-    string y;
-    for(int i = 0; x[i]; i++)
+    string c;
+    for(int i=0;a[i]; i++)
     {
-        if(x[i] != ' ')
-            y.push_back(x[i]);
+        if(a[i]!=' ')
+            c.push_back(a[i]);
     }
-    return y;
+    return c;
 }
-
 int main()
 {
-    string a, b;
-    long test, i;
-    cin >> test;
+    //freopen("txt.txt","r",stdin);
+    string a,b,c;
+    int t,x,y,cs=1,j;
+    cin>>t;
     getchar();
-    for(i = 1; i <= test; i++)
+    while(t--)
     {
-        getline(cin, a);
-        getline(cin, b);
-        if(a == b)
-            cout << "Case " << i << ": Yes\n";
+        j=0;
+        getline(cin,a);
+        getline(cin,b);
+        x=a.size();
+        y=b.size();
+        if(a==b)
+        {
+            cout<<"Case "<<cs++<<": "<<"YES"<<endl;
+        }
+
+
         else
         {
-            a = Marge(a);
-            b = Marge(b);
-            if(a == b)
-                cout << "Case " << i << ": Output Format Error\n";
+            a=demo(a);
+            b=demo(b);
+            if(a==b)
+            {
+                cout<<"Case "<<cs++<<": "<<"Output Format Error"<<endl;
+            }
             else
-                cout << "Case " << i << ": Wrong Answer\n";
+            {
+                cout<<"Case "<<cs++<<": "<<"Wrong Answer"<<endl;
+            }
         }
     }
-
-    return 0;
 }
+
+
+
+
+
